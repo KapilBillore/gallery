@@ -1,0 +1,47 @@
+<div *ngIf=" user$ | async as user">
+  <form [formGroup]="profileForm" (ngSubmit)="submit()">
+
+    <div>
+      <img width="30px" height="30px" [src]="user.photoURL">
+    </div>
+
+    <div>
+      <input type="file" name="profileimage" id="profileimage" (change)="uploadFile($event, user)">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" formControlName="email">
+    </div>
+
+    <div>
+      <label for="displayName">Display Name:</label>
+      <input type="text" name="displayName" id="displayName" formControlName="displayName">
+    </div>
+
+    <div>
+      <label for="firstName">First Name:</label>
+      <input type="text" name="firstName" id="firstName" formControlName="firstName">
+    </div>
+
+    <div>
+      <label for="lastName">Last Name:</label>
+      <input type="text" name="lastName" id="lastName" formControlName="lastName">
+    </div>
+
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone" id="phone" formControlName="phone">
+    </div>
+
+    <div>
+      <label for="address">Address:</label>
+      <input type="text" name="address" id="address" formControlName="address">
+    </div>
+
+    <button type="submit" (click)="submit()">
+      Save
+    </button>
+  </form>
+
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf=" user$ | async as user">
+  <p>Welcome to the Gallery! {{ user.displayName }}</p>
+  <p>Look what is up in the bucket!</p>
+  <div>
+    <input type="file" name="images" id="images" (change)="handleFiles($event)" multiple>
+  </div>
+  <div>
+    <button (click)="uploadImages()">Upload Image</button>
+  </div>
+  <div class="gallery" *ngIf="images$ | async as images">
+    <div *ngFor="let image of images">
+      <p>Name : {{image.name}}</p>
+      <img src="{{image.photoURL}}" height="200px" width="300px" alt="" srcset="">
+    </div>
+  </div>
+</div>

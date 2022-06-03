@@ -1,0 +1,11 @@
+<nav>
+  Gallery
+  <ng-container *ngIf="authState$ | async; else templateA">
+    <button (click)="logout()">Logout</button>
+    <button routerLink="/profile">Profile</button>
+  </ng-container>
+  <ng-template #templateA>
+    <button>Login</button>
+  </ng-template>
+
+</nav>

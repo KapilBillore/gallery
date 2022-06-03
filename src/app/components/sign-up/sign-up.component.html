@@ -1,0 +1,21 @@
+
+<form [formGroup]="signUpForm" (submit)="submit()">
+  <div>
+    <label for="displayName">Display Name : </label>
+    <input type="displayName" formControlName="displayName">
+  </div>
+
+  <div>
+    <label for="email">Email : </label>
+    <input type="email" formControlName="email">
+  </div>
+
+  <div>
+    <label for="password">Password : </label>
+    <input type="password" formControlName="password">
+  </div>
+
+  <button type="submit" [disabled]="!signUpForm.valid">
+    SignUp
+  </button>
+</form>
